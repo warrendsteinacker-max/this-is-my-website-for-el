@@ -1,51 +1,37 @@
-name: Deploy Vite site to Pages
+name: Build and Deploy
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-          # Looks for the lock file inside your subfolder
-          cache-dependency-path: './vite-project/package-lock.json'
+          # Points to the lock file inside your subfolder
+          cache-dependency-path: vite-project/package-lock.json
 
       - name: Install dependencies
-        run: npm install
-        working-directory: ./vite-project
+        # Running from the vite-project directory
+        run: npm ci
+        working-directory: vite-project
 
-      - name: Build
+      - name: Build project
         run: npm run build
-        working-directory: ./vite-project
+        working-directory: vite-project
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Points to the compiled folder inside the subfolder
-          path: ./vite-project/dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          # Points to the dist folder inside your subfolder
+          path: vite-project/dist
