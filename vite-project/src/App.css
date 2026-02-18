@@ -16,6 +16,9 @@
   animation-direction: alternate;
   animation-play-state: running;
   animation-timing-function: linear;
+  border-radius: 100%;
+  border-left: dotted;
+  background-color: #ff4757;
 }
 
 @keyframes spin{
@@ -25,7 +28,7 @@
   }
   to{
     margin-left: 90%;
-    transform: rotate(360deg)
+    transform: rotate(1080deg)
   } 
 }
 
