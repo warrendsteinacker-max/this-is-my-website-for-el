@@ -4,11 +4,13 @@
 
 import React from 'react';
 import './App.css';
+import Demo from './comps/Demo';
+import {Demo2} from './comps/Demo2';
 import Mod1 from './comps/Mod1';
 import Mod2 from './comps/Mod2';
 import Mod3 from './comps/Mod3';
 import Mod4 from './comps/Mod4';
-import Mod5 from './comps/Mod5'
+import Mod5 from './comps/Mod5';
 import Mod6 from './comps/Mod6';
 import Home from './comps/Home';
 // Import your logo at the top so Vite handles the path correctly
@@ -53,7 +55,8 @@ function App() {
           <Link to="/mod4" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module 4</Link>
           <Link to="/mod5" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module 5</Link> 
           <Link to="/mod6" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module 6</Link>
-          <Link to="/demo" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module demo</Link>        
+          <Link to="/demo" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module demo</Link>
+          <Link to="/demo2" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module demo 2</Link>        
         </nav>
 
         <div style={{ padding: '20px' }}>
@@ -67,7 +70,8 @@ function App() {
             <Route path="/mod4" element={<Mod4 />} />
             <Route path="/mod5" element={<Mod5 />}/>
             <Route path="/mod6" element={<Mod6 />}/>
-            <Route path="/demo" element={<Mod6 />}/>
+            <Route path="/demo" element={<Demo />}/>
+            <Route path="/demo2" element={<Demo2/>}/>
             
             
             {/* 'path="*"' is your safety net; it catches broken links and redirects to Home */}
