@@ -8,6 +8,10 @@
 
 .sin{
   animation: spin;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  animation-play-state: running;
+  animation-timing-function: linear;
 }
 
 @keyframes spin{
