@@ -7,9 +7,13 @@
 
 
 .sin{
+  top: 5px;
+  left: 5px;
+  position: absolute;
   animation: spin;
   animation-iteration-count: infinite;
   animation-duration: 20s;
+  animation-direction: alternate;
   animation-play-state: running;
   animation-timing-function: linear;
 }
@@ -17,11 +21,11 @@
 @keyframes spin{
   from{
     margin-left: 0%;
-    transform: rotateX(0deg);
+    transform: rotate(0deg);
   }
   to{
-    margin-left: 100%;
-    transform: rotateX(360deg)
+    margin-left: 90%;
+    transform: rotate(360deg)
   } 
 }
 
