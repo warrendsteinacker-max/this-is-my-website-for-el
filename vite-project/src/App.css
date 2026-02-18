@@ -7,15 +7,17 @@
 
 
 .sin{
-  animation: ;
+  animation: spin;
 }
 
 @keyframes spin{
   from{
-    rotateX: 0deg
+    margin-left: 0%;
+    transform: rotateX(0deg);
   }
   to{
-    rotateX: 360deg
+    margin-left: 100%;
+    transform: rotateX(360deg)
   } 
 }
 
