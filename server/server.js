@@ -16,6 +16,8 @@ const genAI = GooleGenAI({
     apiKey: process.env.AI_KEY
 });
 
+app.use('/api', routers)
+
 app.listen(3002, () => {
     console.log('connected to server')
 })
