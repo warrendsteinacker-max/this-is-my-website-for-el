@@ -4,6 +4,10 @@ import cors from 'cors'
 import {GooleGenAI} from '@google/genai'
 
 
+
+
+
+
 app.use(express.json())
 
 app.use(cors({origin: '*'}))
