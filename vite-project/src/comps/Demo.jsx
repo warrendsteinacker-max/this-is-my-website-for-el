@@ -38,11 +38,20 @@ import {useState} from 'react'
 
 const Demo = () => {
 
-  const [D, setD] = useState()
+  const [N, setN] = useState(0)
 
     const getdata = async() => {
           try{
-            const res = await fetch('')
+            const newN = N + 1
+            setN(newN)
+            const res = await fetch(`https://jsonplaceholder.typicode.com/posts${N}`)
+
+            if(!res.ok){
+              throw new Error('fetch failed')
+            }
+
+            const data = await res.json()
+            console.log(data)
           }
           catch(error){
             console.error(error.message)
@@ -51,7 +60,7 @@ const Demo = () => {
 
   return(<>
 
-    <button onClick={getdata}></button>
+    <button onClick={getdata}>get post</button>
 
   </>)
 }
