@@ -50,6 +50,8 @@ export const post1 = async (req, res) => {
             }],
         });
 
+
+        console.log(result)
         // 1. Get the clean text string
         const aiResponse = result.candidates[0].content.parts[0].text;
 

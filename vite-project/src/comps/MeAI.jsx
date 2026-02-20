@@ -144,7 +144,7 @@ const MeAI = () => {
     if (L) return <h3 style={{ color: 'white' }}>Loading...</h3>;
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', color: 'white' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', color: 'white', appearance: 'none', outline: 'none' }}>
             <div style={{ position: 'absolute', top: '5%', left: '2%' }}>
                 <select value={M} onChange={(e) => setM(e.target.value)}>
                     <option value='mod1'>mod1</option>

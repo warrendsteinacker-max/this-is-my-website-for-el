@@ -38,26 +38,33 @@ import {useState} from 'react'
 
 const Demo = () => {
 
-  const [N, setN] = useState(0)
+  const [N, setN] = useState(1)
 
-    const getdata = async() => {
-          try{
-            const newN = N + 1
-            console.log(newN)
-            setN(newN)
-            const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${N}`)
+    // const getdata = async() => {
+    //       try{
+    //         const newN = N + 1
+    //         setN(newN)
+    //         const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${N}`)
 
-            if(!res.ok){
-              throw new Error('fetch failed')
-            }
+    //         if(!res.ok){
+    //           throw new Error('fetch failed')
+    //         }
 
-            const data = await res.json()
-            console.log(data)
-          }
-          catch(error){
-            console.error(error.message)
-          }
+    //         const data = await res.json()
+    //         console.log(data)
+    //       }
+    //       catch(error){
+    //         console.error(error.message)
+    //       }
+    // }
+
+
+    const getdata = () => {
+      fetch(`https://jsonplaceholder.typicode.com/posts/${N}`).then((res) => {return res.json()}).then((data) => console.log(data)).then(()=> setN(N+1)).catch((error) => console.error(error.message))
     }
+
+
+
 
   return(<>
 
