@@ -1,8 +1,9 @@
-import {GooleGenAI} from '@google/genai'
+import 'dotenv/config';
+import { GoogleGenAI } from '@google/genai';
 
+// Initialize the client
+const ai = new GoogleGenAI({ apiKey: process.env.AI_KEY });
 
-const genAI = new GooleGenAI(process.env.AI_KEY);
-
-const AI = genAI.getGenerativeModel({model: 'gemini-1.5-flash'})
-
-export default AI
+// In the NEW library, you don't 'get' a model object anymore.
+// You call methods directly through 'ai.models'
+export default ai;

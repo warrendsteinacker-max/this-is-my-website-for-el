@@ -1,11 +1,14 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
-import routers from './routes'
+import routers from './routes.js'
 
-app.use(express.json())
+
+const app = express()
 
 app.use(cors({origin: '*'}))
+
+app.use(express.json());
 
 app.use('/', routers)
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import { post1, post2, post3, post4, post5, post6, post7, post8, post9 } from './C'
+import { post1, post2, post3, post4, post5, post6, post7, post8, post9 } from './C.js'
 
 const router = express.Router()
 

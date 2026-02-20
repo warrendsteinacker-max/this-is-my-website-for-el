@@ -13,6 +13,7 @@ import Mod4 from './comps/Mod4';
 import Mod5 from './comps/Mod5';
 import Mod6 from './comps/Mod6';
 import Home from './comps/Home';
+import MeAI from './comps/MeAI';
 // Import your logo at the top so Vite handles the path correctly
 
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -56,7 +57,8 @@ function App() {
           <Link to="/mod5" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module 5</Link> 
           <Link to="/mod6" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module 6</Link>
           <Link to="/demo" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module demo</Link>
-          <Link to="/demo2" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module demo 2</Link>        
+          <Link to="/demo2" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module demo 2</Link>
+          <Link to="/MEAI" style={{ textDecoration: 'none', color: 'blue', fontWeight: 'bold' }}>Module demo 2</Link>        
         </nav>
 
         <div style={{ padding: '20px' }}>
@@ -72,6 +74,7 @@ function App() {
             <Route path="/mod6" element={<Mod6 />}/>
             <Route path="/demo" element={<Demo />}/>
             <Route path="/demo2" element={<Demo2/>}/>
+            <Route path="/MEAI" element={<MeAI/>}/>
             
             
             {/* 'path="*"' is your safety net; it catches broken links and redirects to Home */}
