@@ -34,17 +34,29 @@
 
 
 
-import React from 'react'
+import {useState} from 'react'
 
 const Demo = () => {
 
+  const [D, setD] = useState()
+
+    const getdata = async() => {
+          try{
+            const res = await fetch('')
+          }
+          catch(error){
+            console.error(error.message)
+          }
+    }
 
   return(<>
 
-    <button onClick={}></button>
+    <button onClick={getdata}></button>
 
   </>)
 }
+
+export default Demo
 
 
 
