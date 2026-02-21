@@ -21,6 +21,9 @@ const x = {aa: 'a', bb: 'b'}
 
 Object.values(x).forEach((key) => console.log(key))
 
+const shalownewx = Object.assign({}, x) 
+
+console.log(shalownewx)
 
 
 
